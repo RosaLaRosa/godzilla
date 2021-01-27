@@ -1,0 +1,5 @@
+#!/bin/bash
+systemctl start intelcs-management-api.service -n 0 --no-pager
+###systemctl start intelcs-cluster-manager.service -n 0 --no-pager
+systemctl start intelcs-portal.service -n 0 --no-pager
+systemctl start intelcs-webrtc-agent.service -n 0 --no-pager
