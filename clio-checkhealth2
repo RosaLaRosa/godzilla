@@ -1,0 +1,5 @@
+#!/bin/bash
+systemctl status intelcs-management-api.service -n 0 --no-pager
+systemctl status intelcs-cluster-manager.service -n 0 --no-pager
+systemctl status intelcs-portal.service -n 0 --no-pager
+systemctl status intelcs-webrtc-agent.service -n 0 --no-pager
