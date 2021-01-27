@@ -1,0 +1,20 @@
+[Unit]
+Description=Intel CS webrtc-agent
+After=syslog.target network.target
+[Service]
+Type=forking
+PIDFile=/opt/intelcs/production/logs/webrtc-agent.pid
+User=root
+Group=root
+WorkingDirectory=/opt/intelcs/production
+ExecStart=/opt/intelcs/production/bin/daemon.sh start webrtc-agent
+ExecStop=/opt/intelcs/production/bin/daemon.sh stop webrtc-agent
+Restart=always
+LimitFSIZE=infinity
+LimitCPU=infinity
+LimitAS=infinity
+LimitMEMLOCK=infinity
+LimitNOFILE=64000
+LimitNPROC=64000
+[Install]
+WantedBy=multi-user.target
