@@ -1,0 +1,38 @@
+[agent]
+maxProcesses = 13 #default: 13
+prerunProcesses = 2 #default: 2
+[cluster]
+name = "owt-cluster"
+join_retry = 60 #default: 60 times
+report_load_interval = 1000 #default: 1000, unit: millisecond
+max_load = 64
+network_max_scale = 1000 #unit: Mbps
+[capacity]
+isps = [] #default: [], which means all ISPs.
+regions = [] #default: [], which means all regions.
+[rabbit]
+host = "192.168.25.76" #default: "localhost"
+port = 5672 #default: 5672
+[internal]
+#The IP address used for internal-cluster media spreading. Will use the IP got from the
+'network_interface' item if 'ip_address' is not specified or equal to "".
+ip_address = "" #default: ""
+#The network interface used for internal-cluster media spreading. The first enumerated network
+interface in the system will be adopted if this item is not specified.
+network_interface = "ens160" # NIC privata
+# The internal listening port range, only works for TCP now
+maxport = 0 #default: 0
+minport = 0 #default: 0
+[webrtc]
+network_interfaces = [ {name = "ens192"} ] # Interfaccia pubblica
+keystorePath = "./cert/certificate.pfx"
+#note, this won't work with all versions of libnice. With 0 all the available ports are used
+# The webrtc port range
+maxport = 11999 #default: 0
+minport = 9000 #default: 0
+#STUN server IP address and port to be used by the server.
+#if "" is used, the address is discovered locally
+stunport = 443 #default: 0
+stunserver = "bitm-stun.notariato.it" #default: ""
+#ThreadPool worker numbers for peer connection
+num_workers = 24 #default: 24
