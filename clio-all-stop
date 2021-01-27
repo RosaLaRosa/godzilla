@@ -1,0 +1,8 @@
+#!/bin/bash
+systemctl stop intelcs-management-api.service -n 0 --no-pager
+systemctl stop intelcs-cluster-manager.service -n 0 --no-pager
+systemctl stop intelcs-portal.service -n 0 --no-pager
+systemctl stop intelcs-webrtc-agent.service -n 0 --no-pager
+systemctl stop intelcs-sip-portal.service -n 0 --no-pager
+systemctl stop intelcs-sip-agent.service -n 0 --no-pager
+systemctl stop intelcs-management-console.service -n 0 --no-pager
