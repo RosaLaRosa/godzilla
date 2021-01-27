@@ -1,0 +1,18 @@
+[agent]
+maxProcesses = -1 #default: -1, unlimited
+prerunProcesses = 2 #default: 2
+[cluster]
+name = "owt-cluster"
+join_retry = 60 #default: 60 times
+report_load_interval = 1000 #default: 1000, unit: millisecond
+#The max CPU load under which this worker can take new tasks.
+max_load = 24
+[rabbit]
+host = "217.22.213.14" #default: "localhost"
+port = 5672 #default: 5672
+[internal]
+ip_address = "" #default: ""
+network_interface = "ens160" # NIC privata
+# The internal listening port range, only works for TCP now
+maxport = 0 #default: 0
+minport = 0 #default: 0
