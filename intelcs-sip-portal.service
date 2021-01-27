@@ -1,0 +1,14 @@
+[Unit]
+Description=Intel CS sip-portal
+After=syslog.target network.target
+[Service]
+Type=forking
+PIDFile=/opt/intelcs/production/logs/sip-portal.pid
+User=root
+Group=root
+WorkingDirectory=/opt/intelcs/production
+ExecStart=/opt/intelcs/production/bin/daemon.sh start sip-portal
+ExecStop=/opt/intelcs/production/bin/daemon.sh stop sip-portal
+Restart=always
+[Install]
+WantedBy=multi-user.target
