@@ -1,0 +1,21 @@
+[Unit]
+Description=Intel CS cluster-manager
+After=syslog.target network.target intelcs-management-api.service
+Wants=intelcs-management-api.service
+[Service]
+Type=forking
+PIDFile=/opt/intelcs/production/logs/cluster-manager.pid
+User=root
+Group=root
+WorkingDirectory=/opt/intelcs/production
+ExecStart=/opt/intelcs/production/bin/daemon.sh start cluster-manager
+ExecStop=/opt/intelcs/production/bin/daemon.sh stop cluster-manager
+Restart=always
+LimitFSIZE=infinity
+LimitCPU=infinity
+LimitAS=infinity
+LimitMEMLOCK=infinity
+LimitNOFILE=64000
+LimitNPROC=64000
+[Install]
+WantedBy=multi-user.target
